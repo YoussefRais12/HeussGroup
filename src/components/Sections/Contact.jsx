@@ -1,4 +1,5 @@
-import React from "react";
+import React, {useState} from "react";
+import axios from "axios";
 import styled from "styled-components";
 // Assets
 import ContactImg1 from "../../assets/img/contact-1.png";
@@ -6,6 +7,30 @@ import ContactImg2 from "../../assets/img/contact-2.png";
 import ContactImg3 from "../../assets/img/contact-3.png";
 
 export default function Contact() {
+    const [formData,
+        setFormData] = useState({fname: '', email: '', subject: '', message: ''});
+
+    const [responseMessage,
+        setResponseMessage] = useState('');
+
+    const handleChange = (e) => {
+        const {name, value} = e.target;
+        setFormData({
+            ...formData,
+            [name]: value
+        });
+    };
+
+    const handleSubmit = async(e) => {
+        e.preventDefault();
+        try {
+            await axios.post('http://localhost:5000/email/send', formData);
+            setResponseMessage('Email sent successfully!');
+        } catch (error) {
+            setResponseMessage('Error sending email.');
+        }
+    };
+
     return (
         <Wrapper id="contact">
             <div className="lightBg">
@@ -25,30 +50,51 @@ export default function Contact() {
                         paddingBottom: "30px"
                     }}>
                         <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                            <Form>
+                            <Form onSubmit={handleSubmit}>
                                 <label className="font13">First name:</label>
-                                <input type="text" id="fname" name="fname" className="font20 extraBold"/>
+                                <input
+                                    type="text"
+                                    id="fname"
+                                    name="fname"
+                                    className="font20 extraBold"
+                                    value={formData.fname}
+                                    onChange={handleChange}/>
                                 <label className="font13">Email:</label>
-                                <input type="text" id="email" name="email" className="font20 extraBold"/>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    className="font20 extraBold"
+                                    value={formData.email}
+                                    onChange={handleChange}/>
                                 <label className="font13">Subject:</label>
-                                <input type="text" id="subject" name="subject" className="font20 extraBold"/>
+                                <input
+                                    type="text"
+                                    id="subject"
+                                    name="subject"
+                                    className="font20 extraBold"
+                                    value={formData.subject}
+                                    onChange={handleChange}/>
+                                <label className="font13">Message:</label>
                                 <textarea
                                     rows="4"
                                     cols="50"
-                                    type="text"
                                     id="message"
                                     name="message"
-                                    className="font20 extraBold"/>
+                                    className="font20 extraBold"
+                                    value={formData.message}
+                                    onChange={handleChange}/>
+                                <SumbitWrapper className="flex">
+                                    <ButtonInput
+                                        type="submit"
+                                        value="Send Message"
+                                        className="pointer animate radius8"
+                                        style={{
+                                        maxWidth: "220px"
+                                    }}/>
+                                </SumbitWrapper>
                             </Form>
-                            <SumbitWrapper className="flex">
-                                <ButtonInput
-                                    type="submit"
-                                    value="Send Message"
-                                    className="pointer animate radius8"
-                                    style={{
-                                    maxWidth: "220px"
-                                }}/>
-                            </SumbitWrapper>
+                            {responseMessage && <p>{responseMessage}</p>}
                         </div>
                         <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6 flex">
                             <div
@@ -142,8 +188,8 @@ const ButtonInput = styled.input `
   }
 `;
 const ContactImgBox = styled.div `
-  max-width: 180px; 
-  align-self: flex-end; 
+  max-width: 180px;
+  align-self: flex-end;
   margin: 10px 30px 10px 0;
 `;
 const SumbitWrapper = styled.div `
