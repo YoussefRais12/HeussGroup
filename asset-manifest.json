@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/HeussGroup/static/css/main.bb52d3be.css",
-    "main.js": "/HeussGroup/static/js/main.f48bf177.js",
+    "main.js": "/HeussGroup/static/js/main.53a92218.js",
     "static/js/453.e714295e.chunk.js": "/HeussGroup/static/js/453.e714295e.chunk.js",
     "static/media/add2.png": "/HeussGroup/static/media/add2.2648867fcb59c0498eff.png",
     "static/media/1.png": "/HeussGroup/static/media/1.f09128372572a86c41a0.png",
@@ -14,6 +14,7 @@
     "static/media/contact-2.png": "/HeussGroup/static/media/contact-2.e059ed7afbcf7aafe927.png",
     "static/media/logo04.png": "/HeussGroup/static/media/logo04.6f634acc4f68cb9aef5c.png",
     "static/media/contact-3.png": "/HeussGroup/static/media/contact-3.ac80b959bb233a78eaed.png",
+    "static/media/heuss-logo.png": "/HeussGroup/static/media/heuss-logo.cc0d77d0611031fa1c03.png",
     "static/media/logo03.png": "/HeussGroup/static/media/logo03.903ef875e5f6a40d4795.png",
     "static/media/logo05.png": "/HeussGroup/static/media/logo05.359ae4303e48b02de15c.png",
     "static/media/slick.svg": "/HeussGroup/static/media/slick.2630a3e3eab21c607e21.svg",
@@ -22,11 +23,11 @@
     "static/media/slick.woff": "/HeussGroup/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/HeussGroup/index.html",
     "main.bb52d3be.css.map": "/HeussGroup/static/css/main.bb52d3be.css.map",
-    "main.f48bf177.js.map": "/HeussGroup/static/js/main.f48bf177.js.map",
+    "main.53a92218.js.map": "/HeussGroup/static/js/main.53a92218.js.map",
     "453.e714295e.chunk.js.map": "/HeussGroup/static/js/453.e714295e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.bb52d3be.css",
-    "static/js/main.f48bf177.js"
+    "static/js/main.53a92218.js"
   ]
 }
