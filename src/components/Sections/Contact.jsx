@@ -24,7 +24,7 @@ export default function Contact() {
     const handleSubmit = async(e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:5000/email/send', formData);
+            await axios.post('https://api.render.com/deploy/srv-cqg46ftds78s73c8jqqg?key=fV3KKZzM0zo', formData);
             setResponseMessage('Email sent successfully!');
         } catch (error) {
             setResponseMessage('Error sending email.');
