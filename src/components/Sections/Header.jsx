@@ -30,7 +30,7 @@ export default function Header() {
             </QuotesWrapper>
             <div>
               <p className="font15 whiteColor">
-                <em>7atitha f 7anouti w mokhi tnek</em>
+                <em>7atitha f 7anouti </em>
               </p>
               <p className="font13 orangeColor textRight" style={{marginTop: '10px'}}>3amt e Julliette</p>
             </div>
